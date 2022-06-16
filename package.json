@@ -1,0 +1,23 @@
+{
+  "name": "githubrepomanager",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "GitHub Repo Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinGailey/GithubRepoManager.git"
+  },
+  "author": "Austin Gailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AustinGailey/GithubRepoManager/issues"
+  },
+  "homepage": "https://github.com/AustinGailey/GithubRepoManager#readme",
+  "dependencies": {
+    "octokit": "^1.8.0"
+  }
+}
