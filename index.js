@@ -1,7 +1,7 @@
 import { Octokit, App } from "octokit";
 
 const octokit = new Octokit({
-    auth: ''
+    auth: 'GITHUB_PAT'
   })
 
 async function getBranch() {
@@ -30,18 +30,20 @@ async function getAccess() {
         repo: 'GithubRepoManager',
         branch: 'main'
       })
-    console.log(result.data.users)
+
+    for (var index in result.data.users){
+        console.log(result.data.users[index].login)
+    }
 }
 
 async function putRestrictions() {
-    var result = await octokit.request('PUT /repos/austingailey/GithubRepoManager/branches/main/protection', {
-        owner: 'austingailey',
+    var result = await octokit.request('PUT /repos/AustinGaileyDevelopment/GithubRepoManager/branches/main/protection', {
+        owner: 'AustinGaileyDevelopment',
         repo: 'GithubRepoManager',
         branch: 'main',
         required_status_checks: {
           strict: true,
           contexts: [
-            'continuous-integration/travis-ci'
           ]
         },
         enforce_admins: true,
@@ -84,7 +86,7 @@ async function putRestrictions() {
       })
 }
 
-getRepos()
+//getRepos()
 //getBranch()
 getAccess()
 //putRestrictions()
